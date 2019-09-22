@@ -5,8 +5,13 @@
 <script type="text/javascript" src="js/async.js"></script>
 <body>
   <script>
+    async function sync(param){
+      console.log(`Side index.html sync START`);
+      await callAsync(param);  //awaitを挿入
+      console.log(`Side index.html sync END`);
+    } 
     var param = 1 ; // 失敗させる時は1以外に変更
-    callAsync(param);
+    sync(param);
   </script>
 </body>
 </html>
